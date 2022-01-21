@@ -22,5 +22,19 @@ public class CustomerController {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	void addCustomer(@RequestBody @Valid Customer customer) {
 		customerService.addUser(customer);
+		
+		
+			System.out.println(customer.getName());
+			System.out.println(customer.getGender());
+			System.out.println(customer.getDob());
+			System.out.println(customer.getAddress());
+			System.out.println(customer.getCity());
+			System.out.println(customer.getState());
+			System.out.println(customer.getPin());
+			System.out.println(customer.getTelephone());
+			System.out.println(customer.getFax());
+			System.out.println(customer.getEmail());
+		customerService.saveCustomer(customer);
+		
 	}
 }
