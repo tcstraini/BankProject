@@ -20,16 +20,16 @@ public class DepositService {
 		
 		Customer customer = customerRepository.findById(id).get();
 		
-		Double old_amt = customer.getDeposit().getAmt();
-		Double final_amt = old_amt + deposit.getAmt();
+		Double initial_amount = customer.getDeposit().getAmount();
+		Double total_amount = initial_amount + deposit.getAmount();
 		
-		Deposit _deposit = customer.getDeposit();
-		_deposit.setAmt(final_amt);
-		depositRepository.save(_deposit);
+		Deposit depositfinal = customer.getDeposit();
+		depositfinal.setAmount(total_amount);
 		
-		customer.setDeposit(_deposit);
+		
+		depositRepository.save(depositfinal);
+		customer.setDeposit(depositfinal);
 		customerRepository.save(customer);
-		
 	}
-
+	
 }

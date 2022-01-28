@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +17,11 @@ public class CustomerController {
 
 	@Autowired
 	private CustomerService customerService;
-
+	
 	@PostMapping("/customer")
-	@Transactional
 	@ResponseStatus(code = HttpStatus.CREATED)
 	void addCustomer(@RequestBody @Valid Customer customer) {
 		customerService.addUser(customer);
+			
 	}
 }

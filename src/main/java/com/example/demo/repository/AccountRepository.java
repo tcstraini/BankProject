@@ -1,12 +1,12 @@
+
 package com.example.demo.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.Account;
 
-import java.util.Optional;
+@Repository
+public interface AccountRepository extends CrudRepository<Account, Integer> {
 
-public interface AccountRepository extends JpaRepository<Account, Long> {
-
-    Optional<Account> findBySortCodeAndAccountNumber(String sortCode, String accountNumber);
 }
