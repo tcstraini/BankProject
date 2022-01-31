@@ -19,14 +19,12 @@ public class Deposit {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer depoid;
 	
-	//Account Number
 	@Pattern(regexp = "[0-9 ]+")
 	@Size(max = 10)
 	@NotBlank
 	@NotNull
 	private String accountnum;
 	
-	//Amount
 	@NotBlank 
 	@Pattern(regexp = "^\\s*(?=.*[1-9])\\d*(?:\\.\\d{1,2})?\\s*$")
 	private Double amount;

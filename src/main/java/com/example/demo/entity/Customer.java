@@ -93,6 +93,8 @@ public class Customer {
 	//Account
 	@OneToOne(cascade = CascadeType.ALL)
 	private Account account;
+
+	public Double getA;
 	
 	
 	public String getName() {

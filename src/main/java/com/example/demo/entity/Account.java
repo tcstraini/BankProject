@@ -20,19 +20,16 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer accid;
 	
-	//Customer ID
 	@Pattern(regexp = "[0-9 ]+")
 	@Size(max = 10)
 	@NotBlank
 	@NotNull
 	private String custId;
 	
-	//Type of Account
 	@Pattern(regexp ="^Saving?$|^Current?$")
 	@NotBlank
 	private String accType;
 	
-	//Initial Deposit
 	@Pattern(regexp = "[0-9]+(\\.[0-9][0-9]?)?")
 	@Range(min = 500)
 	private Double initalDep;
